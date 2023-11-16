@@ -1,0 +1,86 @@
+
+{% load cms_tags menu_tags sekizai_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}About Artificial Intelligence Lab (AILAB) as a research group{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        /* Additional custom CSS for this page, if needed */
+    </style>
+            {% render_block "css" %}
+
+</head>
+<body>
+    {% cms_toolbar %}
+    <header>
+        <div class="site-branding">
+            <img src="{% static 'img/logo.jpg' %}" alt="IoT Research Group Logo">
+        </div>
+        <nav>
+            <ul>
+                            {% show_menu 0 100 100 100 %}
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="content">
+            <main>
+                <article>
+                    <div class="entry-content">
+                        <p class="has-huge-font-size"><strong>About Us</strong></p>
+
+                        <div class="center-paragraph">
+                         
+                            <p>
+                            {% block content %}
+            
+            {% placeholder content %}
+            {% endblock content %}
+                            The <strong>Artificial Intelligence Lab (AILAB) as a research group</strong> is composed of a multidisciplinary team of faculty members and students from the College of Computing and Software Engineering and from the Southern Polytechnic College of Engineering and Engineering Technology. Dr. Valero, Dr. Shahriar, Dr. Zhao, and Dr. Zhang belong to the <a href="https://ccse.kennesaw.edu/it/" target="_blank" rel="noopener noreferrer">Department of Information Technology</a>. Dr. Li is part of the Computer Engineering Department. The students are comprised of individuals from both colleges and multiple departments within each. The Artificial Intelligence Lab (AILAB) as a research group is located on the Marietta Campus in the Atrium Building.</p>
+                        </div>
+                        <h1>{% block content1 %}
+            
+            {% placeholder content1 %}
+            {% endblock content1 %}Map</h1>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.880547427!2d-84.558748684787!3d33.93709098063096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!
+                        3m3!1m2!1s0x88f57f1b7b7d1a9d%3A0x1b0b9b0b0b0b0b0!2sAtrium%20(Building%20J)!5e0!3m2!1sen!2sus!4v1593005050324!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
+                        <h3>{% block content2 %}
+            
+            {% placeholder content2 %}
+            {% endblock content2 %}Address</h3>
+                        <p>
+                        {% block content3 %}
+            
+            {% placeholder content3 %}
+            {% endblock content3 %}
+                        1100 South Marietta Pkwy SE, Marietta, GA 30060</p>
+                        <h4>
+                        {% block content4 %}
+            
+            {% placeholder content4 %}
+            {% endblock content4 %}
+                        Phone</h4>
+                        <p>
+                        {% block content5 %}
+            
+            {% placeholder content5 %}
+            {% endblock content5 %}
+                        (470) 578-6000</p>
+                    </div>
+                </article>
+            </main>
+        </div>
+        {% render_block "js" %}
+    </div>
+      <footer>
+<a href="/en/admin/"><p>&copy; 2023 Artificial Intelligence Lab (AILAB) as a research group</p></a>
+
+    </footer>
+</body>
+</html>

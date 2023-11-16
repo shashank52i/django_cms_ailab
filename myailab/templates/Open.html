@@ -1,0 +1,45 @@
+{% load cms_tags menu_tags sekizai_tags %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}Openings - Artificial Intelligence Lab (AILAB) as a research group{% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% render_block "css" %}
+  </head>
+  <body>
+    {% cms_toolbar %}
+    <div class="container">
+      <ul class="nav">
+        {% show_menu 0 100 100 100 %}
+      </ul>
+      <div class="content">
+        <header>
+          <div class="site-branding">
+            <img
+              src="{% static 'img/logo.png' %}"
+              alt="IoT Research Group Logo"
+            />
+          </div>
+        </header>
+        <main>
+          <h1>Openings</h1>
+          <p>
+            {% placeholder "Openings Content" %} Explore opportunities to join
+            our research group. We often publish Graduate Research Assistant
+            (GRA) positions for individuals interested in contributing to our
+            projects and research initiatives.
+          </p>
+          <!-- Add information about job openings and how to apply here -->
+        </main>
+      </div>
+      {% render_block "js" %}
+    </div>
+    <footer>
+      <p>&copy; 2023 Artificial Intelligence Lab (AILAB) as a research group</p>
+    </footer>
+  </body>
+</html>

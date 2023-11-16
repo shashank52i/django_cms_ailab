@@ -1,0 +1,108 @@
+{% load cms_tags menu_tags sekizai_tags %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AILAB - {% page_attribute "page_title" %}</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% render_block "css" %}
+  </head>
+  <body>
+    {% cms_toolbar %}
+
+    <!-- Header Section -->
+    <header>
+      <div class="site-branding">
+        <img src="{% static 'img/logo.jpg' %}" alt="IoT Research Group Logo" />
+      </div>
+      <nav>
+        <ul>
+          {% show_menu 0 100 100 100 %}
+        </ul>
+      </nav>
+    </header>
+    {% block content %} {% placeholder content %} {% endblock content %}
+
+    <!-- Main Content Section -->
+    <main>
+      <h1>
+        {% block content0 %} {% placeholder content0 %} {% endblock content0 %}
+      </h1>
+      <p>
+        {% block content2 %} {% placeholder content2 %} {% endblock content2 %}
+      </p>
+
+      <!-- Image Carousel Section -->
+      <section class="carousel" aria-label="Image Carousel">
+        <div class="carousel__viewport">
+          <div class="carousel__slide">
+            <img src="{% static 'img/slide1.jpg'%}" alt="Slide 1" />
+          </div>
+          <div class="carousel__slide">
+            <img src="{% static 'img/slide2.jpg'%}" alt="Slide 2" />
+          </div>
+          <div class="carousel__slide">
+            <img src="{% static 'img/slide3.jpg'%}" alt="Slide 3" />
+          </div>
+          <div class="carousel__slide">
+            <img src="{% static 'img/slide4.jpg'%}" alt="Slide 4" />
+          </div>
+        </div>
+        <div class="carousel__navigation">
+          <button class="carousel__prev" aria-label="Previous Slide">
+            Previous
+          </button>
+          <button class="carousel__next" aria-label="Next Slide">Next</button>
+        </div>
+      </section>
+
+      <!-- Research Section -->
+      <section>
+        <h2>Natural language processing</h2>
+        <p>
+          {% block content3 %} {% placeholder content3 %} {% endblock content3 %}
+        </p>
+      </section>
+
+      <!-- Demonstrations Section -->
+      <section>
+        <h2>Computer vision</h2>
+        <p>
+          {% block content4 %} {% placeholder content4 %} {% endblock content4 %}
+        </p>
+      </section>
+
+      <!-- Openings Section -->
+      <section>
+        <h2>Machine learning</h2>
+        <p>
+          {% block content5 %} {% placeholder content5 %} {% endblock content5 %}
+        </p>
+      </section>
+
+      <section>
+        <p>
+          {% block content6 %} {% placeholder content6 %} {% endblock content6 %}
+        </p>
+      </section>
+    </main>
+
+    <!-- Add JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <!-- Footer Section -->
+    <footer>
+      <a href="/en/admin/"
+        ><p>
+          &copy; 2023 Artificial Intelligence Lab (AILAB) as a research group
+        </p></a
+      >
+    </footer>
+    {% render_block "js" %}
+  </body>
+</html>

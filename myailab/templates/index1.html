@@ -1,0 +1,37 @@
+{% load cms_tags menu_tags sekizai_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ailab Research Group</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% render_block "css" %}
+</head>
+<body>
+    {% cms_toolbar %}
+
+    <!-- Main Content Section -->
+    <main>
+        <section>
+
+            <h1>
+                {{instance.title}}
+            </h1>
+            
+            <p>
+                {% autoescape off %}
+                {{instance.body}}
+                {% endautoescape %}
+              
+            </p>
+        </section>
+    </main>
+    <!-- Add JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+    {% render_block "js" %}
+</body>
+</html>

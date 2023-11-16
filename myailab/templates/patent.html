@@ -1,0 +1,80 @@
+{% load cms_tags menu_tags sekizai_tags %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}People - Artificial Intelligence Lab (AILAB) as a research group{% endblock title %}
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% render_block "css" %}
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      main {
+        flex: 1;
+        position: relative;
+        z-index: 1;
+      }
+
+      footer {
+        margin-top: auto;
+        height: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    {% cms_toolbar %}
+    <header>
+      <div class="site-branding">
+        <img src="{% static 'img/logo.jpg' %}" alt="IoT Research Group Logo" />
+      </div>
+      <nav>
+        <ul>
+          {% show_menu 0 100 100 100 %}
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="content">
+        <main>
+          <h1>
+            {% block content0 %} {% placeholder content0 %} {% endblock content0
+            %}
+          </h1>
+          <p>
+            {% block content %} {% placeholder content %} {% endblock content %}
+          </p>
+
+          <h1>
+            {% block content2 %} {% placeholder content2 %} {% endblock content2
+            %}
+          </h1>
+          <p>
+            {% block content3 %} {% placeholder content3 %} {% endblock content3
+            %}
+          </p>
+          <!-- Add information about the team members and their roles here -->
+        </main>
+      </div>
+    </div>
+
+    <footer>
+      <a href="/en/admin/"
+        ><p>
+          &copy; 2023 Artificial Intelligence Lab (AILAB) as a research group
+        </p></a
+      >
+    </footer>
+    {% render_block "js" %}
+  </body>
+</html>
